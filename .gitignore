@@ -1,5 +1,6 @@
 .sites-runtime/
 .site-stage/
+.netlify/
 node_modules/
 *.log
 qa/source-previews/
