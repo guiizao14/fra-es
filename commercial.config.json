@@ -1,0 +1,14 @@
+{
+  "currency": "BRL",
+  "updatedAt": "2026-09-11",
+  "source": "Brief comercial do usuário nesta tarefa; prevalece sobre notas anteriores.",
+  "offers": {
+    "combo": {"name": "Kit Frações na Prática + 20 Planos de Aula", "priceCents": 2790, "checkoutProductPriceCents": 2691, "checkout": "https://pay.cakto.com.br/38rum53_1101660", "visible": true, "primary": true},
+    "kit": {"name": "Kit Frações na Prática — 4º e 5º Ano", "priceCents": 1990, "checkoutProductPriceCents": 1891, "checkout": "https://pay.cakto.com.br/i7456pd_1101401", "visible": true, "primary": false},
+    "plans": {"name": "20 Planos de Aula", "priceCents": 1199, "checkoutProductPriceCents": 1100, "checkout": "https://pay.cakto.com.br/czf2pk6_1101780", "visible": false, "usage": "Complemento/order bump a configurar no checkout do kit avulso na Cakto. Não exibir como card ou CTA na landing page."}
+  },
+  "comparison": {"separateTotalCents": 3189, "savingsCents": 399, "upgradeCents": 800},
+  "content": {"kitMainPages": 72, "activities": 28, "visualResources": 10, "games": 4, "plans": 20, "plansPages": 22, "suggestedMinutes": 50, "blocks": 4, "sessionsPerBlock": 5},
+  "checkoutObservation": {"date": "2026-09-11", "serviceFeeCents": 99, "comboPixTotalCents": 2790, "kitPixTotalCents": 1990, "plansPixTotalCents": 1199, "note": "Os valores internos foram ajustados na Cakto e os totais Pix públicos confirmados: combo R$27,90; kit R$19,90; planos R$11,99. Nenhuma compra realizada."},
+  "maintenance": "A página é HTML estático para funcionar sem JavaScript. Ao alterar ofertas, sincronize dist/index.html e execute node scripts/verify.mjs. Este arquivo é interno e não integra o ZIP público."
+}

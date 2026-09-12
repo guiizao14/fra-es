@@ -1,0 +1,32 @@
+[
+  {
+    "contentWidth": 309,
+    "offerCount": 2,
+    "overflow": false,
+    "width": 320
+  },
+  {
+    "contentWidth": 375,
+    "offerCount": 2,
+    "overflow": false,
+    "width": 390
+  },
+  {
+    "contentWidth": 753,
+    "offerCount": 2,
+    "overflow": false,
+    "width": 768
+  },
+  {
+    "contentWidth": 1009,
+    "offerCount": 2,
+    "overflow": false,
+    "width": 1024
+  },
+  {
+    "contentWidth": 1425,
+    "offerCount": 2,
+    "overflow": false,
+    "width": 1440
+  }
+]
