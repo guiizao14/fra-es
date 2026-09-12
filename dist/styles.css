@@ -60,3 +60,6 @@ body{overflow-wrap:anywhere}
 .mid-cta strong{color:var(--ink)}
 @media(max-width:600px){.mid-cta{flex-direction:column;gap:20px}.mid-cta p{font-size:1rem}.mid-cta .button{width:100%}}
 @media(min-width:761px){.mobile-purchase:not([hidden]){position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:30px;background:#fffaf3f8;border-top:1px solid var(--line);padding:13px 40px;z-index:25;box-shadow:0 -5px 25px #123f4512}.mobile-purchase>div{display:flex;align-items:baseline;gap:11px}.mobile-purchase>div>span{font-size:.95rem;color:var(--muted)}.mobile-purchase strong{font-size:1.3rem;color:var(--ink)}.mobile-purchase .button{min-height:48px;font-size:.95rem;padding:12px 24px;gap:16px}}
+.hero-alt-offer{font-size:.85rem;line-height:1.6;margin-top:12px;color:var(--muted)}
+.hero-alt-offer a{font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.hero-alt-offer a:hover{color:var(--orange)}
