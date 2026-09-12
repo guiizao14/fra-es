@@ -62,4 +62,18 @@
     });
     for (const element of state.keys()) observer.observe(element);
   }
+
+  // Purchase intent for the Meta pixel. fbq is injected asynchronously by the UTMify
+  // pixel, so a click before it lands simply sends nothing and still follows the link.
+  const offers = {
+    combo: { content_name: 'Kit + 20 Planos de Aula', value: 27.9 },
+    kit: { content_name: 'Kit Frações na Prática', value: 19.9 }
+  };
+  for (const link of document.querySelectorAll('[data-checkout]')) {
+    link.addEventListener('click', () => {
+      const offer = offers[link.dataset.checkout];
+      if (!offer || typeof window.fbq !== 'function') return;
+      window.fbq('track', 'InitiateCheckout', { ...offer, currency: 'BRL' });
+    });
+  }
 })();
