@@ -1,4 +1,5 @@
 .sites-runtime/
+.site-stage/
 node_modules/
 *.log
 qa/source-previews/
