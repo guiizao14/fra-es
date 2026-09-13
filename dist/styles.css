@@ -398,3 +398,148 @@ button.btn{
 .combo-modal .btn-xl{min-height:58px}
 .combo-modal .btn-plain{min-height:50px;margin-top:8px}
 .modal-foot{margin-top:10px}
+
+/* ---------- guarantee band ----------
+   The badge art ships with a white background baked in (the source PNG had no
+   alpha channel), so it always sits on a white card and the two blend. */
+
+.guarantee{background:var(--ink);color:#fff;padding:44px 0;position:relative;overflow:hidden}
+.guarantee::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(900px 380px at 18% 0%,#1d5c63 0%,transparent 62%);
+  pointer-events:none
+}
+.guarantee-grid{position:relative;display:grid;gap:24px;justify-items:center;text-align:center}
+
+.seal{
+  width:min(250px,68vw);height:auto;border-radius:50%;
+  box-shadow:0 0 0 6px #fff,0 18px 44px #00000059;
+  background:#fff
+}
+
+.guarantee .eyebrow{color:var(--yellow)}
+.guarantee h2{margin-bottom:12px}
+.guarantee h2 em{color:var(--yellow)}
+.guarantee-copy>p{color:#cfe0dc;font-size:1rem;margin-bottom:18px}
+
+.guarantee-points{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:10px;text-align:left}
+.guarantee-points li{position:relative;padding-left:32px;font-size:.98rem;color:#e6efec}
+.guarantee-points strong{color:#fff;font-weight:800}
+.guarantee-points li::before{
+  content:"";position:absolute;left:0;top:.2em;width:21px;height:21px;border-radius:50%;
+  background:var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 6 9 17l-5-5' stroke='%23123f45' stroke-width='3.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/72% no-repeat
+}
+.guarantee-note{font-size:.86rem;color:#a9c4bf}
+
+/* small seal beside the price, where the decision is actually made */
+.seal-inline{
+  display:flex;align-items:center;gap:14px;text-align:left;
+  background:#fffdf7;border:2px solid var(--yellow);border-radius:13px;
+  padding:12px 14px;margin-top:18px
+}
+.seal-inline img{width:74px;height:74px;flex:none;border-radius:50%}
+.seal-inline p{font-size:.88rem;line-height:1.5;color:var(--muted)}
+.seal-inline strong{color:var(--ink);font-weight:800;display:block}
+
+@media(min-width:760px){
+  .guarantee{padding:64px 0}
+  .guarantee-grid{grid-template-columns:auto 1fr;gap:42px;justify-items:start;text-align:left;align-items:center}
+  .seal{width:250px}
+  .seal-inline img{width:86px;height:86px}
+  .seal-inline p{font-size:.92rem}
+}
+@media(min-width:980px){
+  .guarantee{padding:80px 0}
+  .seal{width:290px}
+  .guarantee-copy>p{font-size:1.08rem}
+}
+
+/* =====================================================================
+   Camada de impacto visual. Tudo reforca hierarquia — nada acrescenta
+   ruido: o olho vai para headline, preco e botao, nessa ordem.
+   ===================================================================== */
+
+/* fundo do hero com profundidade */
+.hero{
+  background:
+    radial-gradient(760px 420px at 88% 8%,#ffe9d6 0%,transparent 58%),
+    radial-gradient(620px 380px at 2% 96%,#e7f1ec 0%,transparent 60%),
+    var(--paper);
+  position:relative
+}
+
+/* headline maior e com destaque grifado */
+.hero h1{font-size:1.95rem;letter-spacing:-.028em}
+.hero h1 em{
+  position:relative;display:inline-block;z-index:0;color:var(--orange)
+}
+.hero h1 em::after{
+  content:"";position:absolute;left:-.08em;right:-.08em;bottom:.04em;height:.36em;
+  background:var(--yellow);opacity:.42;border-radius:3px;z-index:-1
+}
+
+/* selo de credibilidade acima da headline */
+.topbar{
+  background:linear-gradient(90deg,var(--ink),#1d5c63 52%,var(--ink));
+  font-weight:600;letter-spacing:.02em
+}
+
+/* caixa de preco com muito mais peso */
+.price-line{
+  background:linear-gradient(180deg,#fff,#fff6e8);
+  border:2px solid var(--yellow);border-radius:13px;
+  padding:14px 16px;box-shadow:0 6px 20px #f5c65d3d
+}
+.price-line strong{font-size:1.72rem;letter-spacing:-.02em}
+
+/* CTA com brilho que percorre o botao */
+.btn-cta{position:relative;overflow:hidden}
+.btn-cta::after{
+  content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;
+  background:linear-gradient(100deg,transparent,#ffffff59,transparent);
+  transform:skewX(-18deg);animation:brilho 3.4s ease-in-out infinite
+}
+@keyframes brilho{0%,62%{left:-60%}100%{left:130%}}
+@media(prefers-reduced-motion:reduce){.btn-cta::after{display:none}}
+
+/* numeros do kit com muito mais presenca */
+.spec{
+  background:linear-gradient(180deg,#fff,#fff8ef);
+  border:2px solid var(--line);border-radius:14px;
+  transition:transform .18s,border-color .18s,box-shadow .18s
+}
+.spec:hover{transform:translateY(-3px);border-color:var(--yellow);box-shadow:0 10px 26px #123f4517}
+.spec strong{font-size:2.5rem}
+.section-alt .spec{background:linear-gradient(180deg,#fff,#fff8ef)}
+
+/* cartao da oferta como o ponto mais quente da pagina */
+.offer{background:linear-gradient(180deg,#fff6e8,#f6e4c8)}
+.offer-card{
+  border-width:4px;border-radius:22px;
+  box-shadow:0 22px 60px #123f4529,0 0 0 8px #ffffff8c
+}
+.price-big strong{font-size:4.2rem;letter-spacing:-.04em}
+.price-big span{color:var(--orange)}
+.price-big{color:var(--orange)}
+
+/* prévias reagem ao toque */
+.preview-open{transition:transform .18s,box-shadow .18s}
+.preview-open:hover{transform:translateY(-4px);box-shadow:0 14px 32px #123f4526}
+
+/* beneficios com numeracao forte */
+.benefit{
+  border:2px solid var(--line);
+  transition:transform .18s,border-color .18s,box-shadow .18s
+}
+.benefit:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 28px #123f4514}
+.b-num{
+  display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;
+  background:var(--orange);color:#fff;font-size:.86rem;letter-spacing:0;margin-bottom:11px
+}
+
+/* barra fixa com mais presenca */
+.sticky-buy{background:#fffaf3fa;border-top:2px solid var(--yellow)}
+.sticky-info strong{color:var(--orange)}
+
+@media(min-width:760px){ .hero h1{font-size:2.55rem} }
+@media(min-width:980px){ .hero h1{font-size:3.1rem} .price-line strong{font-size:2rem} }
