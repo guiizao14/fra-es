@@ -590,3 +590,6 @@ button.btn{
   .planos{grid-template-columns:1fr;gap:26px}
   .plano.destaque{order:-1}
 }
+/* Botao com subtexto: empilha em vez de dividir a linha com o texto principal */
+.btn:has(.btn-sub){flex-direction:column;gap:3px;padding-block:12px}
+.btn .btn-sub{display:block;width:100%}
