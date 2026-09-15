@@ -1,6 +1,6 @@
 // Progressive enhancement: every purchase link works without JavaScript.
-// The CTAs point at the advertised R$9,99 kit checkout; JS upgrades that click
-// into the combo modal. If JS fails, the click still reaches the right checkout.
+// The CTAs are plain anchors straight to the advertised R$9,99 kit checkout —
+// nothing stands between the click and the payment page. JS only adds tracking.
 (() => {
   /* ---------------------------------------------------------------
      Tracking. fbq is injected asynchronously by the UTMify pixel, so
@@ -16,56 +16,6 @@
     if (typeof window.fbq !== 'function') return;
     window.fbq(custom ? 'trackCustom' : 'track', event, { ...params, currency: 'BRL' });
   };
-
-  /* ---------------------------------------------------------------
-     Combo modal
-     --------------------------------------------------------------- */
-  const modal = document.querySelector('[data-combo-modal]');
-  const supportsModal = modal && typeof modal.showModal === 'function';
-  let lastTrigger = null;
-
-  if (supportsModal) {
-    document.addEventListener('click', (event) => {
-      const cta = event.target.closest?.('[data-open-combo]');
-      if (!cta) return;
-      // Let the browser handle ctrl/cmd/shift-click as the user intended.
-      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      lastTrigger = cta;
-      modal.showModal();
-      document.body.classList.add('modal-open');
-      modal.scrollTop = 0;
-      modal.querySelector('[data-modal-close]')?.focus();
-      track('ModalComboAberto', { origem: cta.closest('section, .sticky-buy')?.id || 'barra-fixa' }, true);
-    }, true);
-
-    // Every exit path unlocks the page explicitly. Relying on the dialog's
-    // 'close' event is not enough: it does not fire in every engine, and a
-    // missed cleanup leaves body{overflow:hidden} and traps the visitor on a
-    // page that will not scroll.
-    const closeModal = () => {
-      if (modal.open) modal.close();
-      document.body.classList.remove('modal-open');
-      lastTrigger?.focus({ preventScroll: true });
-    };
-
-    modal.querySelector('[data-modal-close]')?.addEventListener('click', closeModal);
-    modal.addEventListener('close', closeModal);
-    modal.addEventListener('cancel', closeModal);   // Esc
-
-    // Click on the backdrop (outside the dialog box) closes it.
-    modal.addEventListener('click', (event) => {
-      if (event.target !== modal) return;
-      const box = modal.getBoundingClientRect();
-      const outside = event.clientX < box.left || event.clientX > box.right ||
-                      event.clientY < box.top  || event.clientY > box.bottom;
-      if (outside) closeModal();
-    });
-
-    // A checkout click leaves the page — drop the lock so a back-navigation
-    // restored from cache is never stuck unscrollable.
-    window.addEventListener('pagehide', () => document.body.classList.remove('modal-open'));
-  }
 
   /* ---------------------------------------------------------------
      Checkout clicks. The hrefs stay untouched in the DOM so the UTMify

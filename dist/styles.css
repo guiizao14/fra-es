@@ -543,3 +543,24 @@ button.btn{
 
 @media(min-width:760px){ .hero h1{font-size:2.55rem} }
 @media(min-width:980px){ .hero h1{font-size:3.1rem} .price-line strong{font-size:2rem} }
+
+/* Vídeo demonstrativo */
+.video-frame{margin:26px auto 24px;max-width:560px}
+.video-frame video{display:block;width:100%;height:auto;aspect-ratio:4/3;border-radius:16px;background:#0b3036;box-shadow:0 16px 38px rgba(18,63,69,.18)}
+#combo .modal-compare{margin-top:22px}
+#combo .cta-block{margin-top:18px}
+/* Conversão: âncora de preço, subtexto do CTA, reversão de risco, barra de prova */
+.price-anchor{font-weight:600;color:var(--muted);font-size:.92rem;white-space:nowrap}
+.btn-sub{display:block;font-size:.78rem;font-weight:600;opacity:.9;margin-top:4px;letter-spacing:.01em;text-transform:none}
+.risk{margin:14px 0 0;font-size:.93rem;line-height:1.55;color:var(--ink);
+      background:#fff6e6;border:1px solid #f0d9a8;border-radius:12px;padding:12px 14px}
+.risk strong{font-weight:800}
+.proofbar{background:var(--ink,#123f45);color:#fff;padding:22px 0}
+.proofbar ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;text-align:center}
+.proofbar li{flex:1 1 130px;display:flex;flex-direction:column;gap:2px}
+.proofbar strong{font-size:1.9rem;font-weight:800;line-height:1;color:var(--yellow,#f5c542)}
+.proofbar span{font-size:.82rem;opacity:.92}
+@media (max-width:520px){
+  .proofbar li{flex:1 1 44%}
+  .price-anchor{display:block;white-space:normal;margin-top:2px}
+}
