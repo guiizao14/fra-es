@@ -564,3 +564,29 @@ button.btn{
   .proofbar li{flex:1 1 44%}
   .price-anchor{display:block;white-space:normal;margin-top:2px}
 }
+/* Dois planos lado a lado */
+.planos{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;margin-bottom:22px}
+.plano{position:relative;background:var(--white);border:2px solid var(--line);
+       border-radius:18px;padding:22px 20px;display:flex;flex-direction:column;gap:10px}
+.plano.destaque{border:3px solid var(--orange);box-shadow:0 18px 48px #123f4526;padding-top:30px}
+.plano-selo{position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+            background:var(--orange);color:#fff;font-size:.72rem;font-weight:800;
+            letter-spacing:.1em;padding:6px 14px;border-radius:999px;white-space:nowrap;margin:0}
+.plano-tag{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--muted);margin:0}
+.plano-nome{font-size:1.05rem;margin:0;line-height:1.3}
+.plano .price-big{margin:2px 0 0}
+.plano .price-cap{margin:0}
+.plano-itens{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:7px;flex:1}
+.plano-itens li{position:relative;padding-left:24px;font-size:.88rem;line-height:1.45}
+.plano-itens li::before{content:"✓";position:absolute;left:0;top:-1px;
+                        color:var(--orange);font-weight:800}
+.plano-itens li.off{color:var(--muted);text-decoration:line-through;opacity:.65}
+.plano-itens li.off::before{content:"—";color:var(--muted)}
+.plano-economia{font-size:.83rem;color:var(--muted);margin:2px 0 0;text-align:center}
+.plano-economia s{opacity:.7}
+.plano-economia strong{color:var(--orange);font-weight:800}
+.plano .btn{margin-top:auto}
+@media (max-width:640px){
+  .planos{grid-template-columns:1fr;gap:26px}
+  .plano.destaque{order:-1}
+}
